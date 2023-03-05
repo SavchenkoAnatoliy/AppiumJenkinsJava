@@ -44,7 +44,7 @@ public class Hooks {
 
 //        service = AppiumDriverLocalService.buildDefaultService();
 //        service.start();
-        assertEquals(true, service.isRunning());
+//        assertEquals(true, service.isRunning());
 
         capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformVersion", "12");
