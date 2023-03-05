@@ -22,6 +22,8 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import static org.junit.Assert.assertEquals;
+
 public class Hooks {
     Properties properties;
     static DesiredCapabilities capabilities;
@@ -39,6 +41,10 @@ public class Hooks {
 //
 //        service.start(); // start the server
 //        Thread.sleep(15000);
+
+//        service = AppiumDriverLocalService.buildDefaultService();
+//        service.start();
+        assertEquals(true, service.isRunning());
 
         capabilities = new DesiredCapabilities();
         capabilities.setCapability("platformVersion", "12");
