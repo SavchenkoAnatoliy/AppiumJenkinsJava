@@ -21,4 +21,8 @@ class BasePageClass {
         PageFactory.initElements(new AppiumFieldDecorator(androidDriver, DEFAULT_WAITING_TIMEOUT), this);
         androidHelperMethods= new AndroidHelperMethods(androidDriver);
     }
+
+    public BasePageClass() {
+
+    }
 }

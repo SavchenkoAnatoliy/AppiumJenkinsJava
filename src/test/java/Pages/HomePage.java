@@ -4,9 +4,11 @@ package Pages;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.openqa.selenium.WebElement;
+import stepDefinitions.Hooks;
 
 
 public class HomePage extends BasePageClass {
+
 
     public static final String CONTINUE_BTN = "com.nobroker.app:id/bottomPermission";
     public static final String BUY_BTN ="com.nobroker.app:id/buyLayout";
@@ -19,6 +21,10 @@ public class HomePage extends BasePageClass {
 
     @AndroidFindBy(xpath = TURN_BACK)
     WebElement turn_back_Btn;
+
+    public HomePage() {
+        super();
+    }
 
     public void turn_back_Btn_click() {
         androidHelperMethods.click(turn_back_Btn);
