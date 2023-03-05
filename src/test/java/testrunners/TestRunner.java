@@ -16,7 +16,7 @@ import static io.cucumber.junit.CucumberOptions.SnippetType.CAMELCASE;
         ,glue = {"stepDefinitions"}
         ,dryRun=false
         ,monochrome=true
-        ,tags = ("@appium")
+//        ,tags = ("@appium")
 
 )
 public class TestRunner {
