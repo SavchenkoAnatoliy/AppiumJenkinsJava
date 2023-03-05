@@ -32,7 +32,7 @@ public class Hooks {
     public static String NodeExePath = "C:\\Program Files\\nodejs\\node.exe";
     public static String AppiumMainJSPath = "C:\\Program Files\\Appium Server GUI\\resources\\app\\node_modules\\appium\\build\\lib\\main.js";
 
-    @Before("@appium")
+    @Before
     public void setUpAppium() throws MalformedURLException, InterruptedException {
 //        service = AppiumDriverLocalService.buildService(new AppiumServiceBuilder()
 //                        .usingDriverExecutable(new File(NodeExePath)).withAppiumJS(new File(AppiumMainJSPath)).withIPAddress("127.0.0.1")
