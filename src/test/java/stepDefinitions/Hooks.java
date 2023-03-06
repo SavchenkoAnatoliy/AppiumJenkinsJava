@@ -12,6 +12,7 @@ import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import util.AppiumServerManager;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -25,6 +26,7 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.assertEquals;
 
 public class Hooks {
+    AppiumServerManager appiumServerManager = new AppiumServerManager();
     Properties properties;
     static DesiredCapabilities capabilities;
     private static WebDriver driver;
@@ -41,7 +43,8 @@ public class Hooks {
 //
 //        service.start(); // start the server
 //        Thread.sleep(15000);
-
+//        appiumServerManager.stopServer();
+//        appiumServerManager.startServer();
 //        service = AppiumDriverLocalService.buildDefaultService();
 //        service.start();
 //        assertEquals(true, service.isRunning());
@@ -52,13 +55,12 @@ public class Hooks {
         capabilities.setCapability("appPackage", "it.lottomatica.lotto");
         capabilities.setCapability("appActivity", "it.lottomatica.lotto.MainActivity");
         capabilities.setCapability("platformName", "Android");
-        capabilities.setCapability("avd", "Pixel_5_API_31");
+        capabilities.setCapability("avd", "Pixel_XL_API_31");
         capabilities.setCapability("autoGrantPermissions", true);
-        capabilities.setCapability("app", System.getProperty("user.dir") + "//src//main//" + "resources//apk//11926.apk");
+        capabilities.setCapability("app", System.getProperty("user.dir") + "//src//main//" + "resources//apk//MyLotteries.apk");
         capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "5000");
         driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub/"), capabilities);
-        driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
-
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
 
     }
 
